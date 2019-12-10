@@ -28,8 +28,24 @@ db.on("error", error => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "./public/index.html"));
+
+  var hbsObject = {
+    burger: "test",
+    devoured: true
+  };
+  res.render("workout-list", hbsObject);
+  // res.sendFile(path.join(__dirname + "./public/index.html"));
 });
+
+
+
+
+
+
+
+
+
+
 
 app.post("/submit", (req, res) => {
   console.log(req.body);
@@ -114,6 +130,13 @@ app.delete("/clearall", (req, res) => {
     }
   });
 });
+
+
+
+
+
+
+
 
 app.listen(3000, () => {
   console.log("App running on port 3000!");

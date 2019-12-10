@@ -103,12 +103,25 @@ h3 {
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.new-ex-hide{
+  display: none;
+}
+
+.new-workout-hide{
+  display: none;
+}
+
 .my-btn {
   background-color: #7c878e;
   color: #fff;
-  width: 175px;
+  font-size: 14px;
+  width: 150px;
   border-radius: 15px;
   margin: 10px 20px 10px 20px;
+}
+
+.small-btn {
+  width: 75px;
 }
 
 .my-btn:hover {
@@ -143,7 +156,7 @@ h3 {
 
 .text-input-small {
     color: #041e42;
-    width: 100%;
+    width: 95%;
     /* height: 50px; */
     resize: none;
     text-align: left;

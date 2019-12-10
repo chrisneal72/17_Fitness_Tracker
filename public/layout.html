@@ -26,17 +26,19 @@
               <div class="row">
                 <div class="col" id="search-saves">
                   {{#each workout}}
-                    <a href="api/link">{{name}}</a>
+                    <h3>{{name}}</h3><br>
+                    <button id="edit-exercise-{{id}}" class="my-btn small-btn">Edit</button> <button id="delete-exercise-{{id}}" class="my-btn small-btn">Delete</button>
+                  <hr>
                   {{/each}}
-                  <button id="new-workout" class="my-btn">Create New Workout</button>
+                  <button id="new-workout" class="my-btn">New Workout</button>
                 </div>
               </div>
             </div>
             <div class="col-8 right-col">
-              <div class="row workout-top-row">
+              <div class="row workout-top-row n ew-workout-hide">
                 <div class="col my-auto">
                   <input type="text" id="workout-name" class="text-input" placeholder="Workout Title">
-                  <button id="new-exercise" class="my-btn">Add Another Exercise</button>
+                  <button id="new-exercise" class="my-btn">Add an Exercise</button>
                 </div>
               </div>
               <div class="row">
@@ -45,22 +47,27 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-12 exercise-col" id="add-exercise">
-                    <label>Exercise Name</label><br>
-                  <input type="text" id="ex-name" class="text-input-small" placeholder="Exercise Name">
+                <div class="col-12 exercise-col n ew-ex-hide" id="add-exercise">
+                    <label>Exercise Name</label><input type="text" id="ex-name" class="text-input-small" placeholder="Exercise Name">
                   <label>Sets</label><br>
                   <input type="text" id="ex-name" class="text-input-small" placeholder="Exercise Name">
                   <label>Reps</label><br>
                   <input type="text" id="ex-name" class="text-input-small" placeholder="Exercise Name">
                   <button id="new-exercise" class="my-btn">Add Exercise</button>
                 </div>
-                <!-- {{#each exercise}} -->
+                <!--
+                {{#if exercises}}
+                {{#each exercise}}
+                -->
                 <div class="col exercise-col" id="exercise-{{id}}">
                   <span id="forecast-date-1">{{exercise-name}}</span><br>
                   <span id="forecast-date-1">{{exercise-sets}}</span><br>
                   <span id="forecast-date-1">{{exercise-reps}}</span><br>
                 </div>
-                <!-- {{/each}} -->
+                <!-- 
+                {{/each}}
+                {{/if}}
+                -->
                 <div class="col exercise-col" id="exercise-{{id}}">
                   <span id="forecast-date-1">{{exercise-name}}</span><br>
                   <span id="forecast-date-1">{{exercise-sets}}</span><br>
