@@ -13,6 +13,7 @@ module.exports = function (app) {
         }
       ]
     };
+    //ex_name is populating, but the other two are not
     Workout.create(myNewWorkout)
       .then(dbWorkout => {
         //do work on dbWorkout
