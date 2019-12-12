@@ -34,6 +34,10 @@ $(function () {
     myNewWorkout.id = $("#workout_form").attr('data-id')
 
     renderWorkouts();
+    
+    $("#ex-name").val('');
+    $("#ex-sets").val('');
+    $("#ex-reps").val('');
 
   });
 
