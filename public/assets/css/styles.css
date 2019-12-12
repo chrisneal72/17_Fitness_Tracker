@@ -61,7 +61,7 @@ h3 {
   font-size: 16px;
   font-weight: bolder;
   line-height: 18px;
-  color: #041e42;
+  color: #fff;
   margin: 0px;
 }
 
@@ -121,7 +121,7 @@ h3 {
 }
 
 .small-btn {
-  width: 75px;
+  width: 85px;
 }
 
 .my-btn:hover {

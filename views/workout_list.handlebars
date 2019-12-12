@@ -1,0 +1,43 @@
+            <div class="col-4 left-col">
+              <div class="row">
+                <div class="col" id="search-saves">
+                  <button id="new-workout" class="my-btn" type="button">New Workout</button>
+                  <hr>
+                  {{#each workout}}
+                    <h3>{{workout_name}}</h3><br>
+                    <button id="{{_id}}" class="my-btn small-btn view-button">View/Edit</button> <button id="{{_id}}" class="my-btn small-btn delete-button">Delete</button>
+                  <hr>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+
+            <div id="indv-workout" class="col-8 right-col new-workout-hide">
+              {{!-- <form name="workout_form" action="/api/add" method="POST"> --}}
+              <form id="workout_form" data-id="{{id}}" method="POST">
+              <div id="new-workout-div" class="row workout-top-row">
+                <div class="col my-auto">
+                  <input type="text" id="workout_name" name="workout_name" class="text-input" placeholder="Workout Title" value="{{workout_name}}">
+                  {{!-- <button id="new-exercise" class="my-btn" type="button">Add an Exercise</button> --}}
+                </div>
+              </div>
+              <div id="exercise-title" class="row">
+                <div class="col">
+                  <H2>Exercises:</H2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 exercise-col" id="add-exercise">
+                  <label>Exercise Name</label><input type="text" id="ex-name" name="ex_name" class="text-input-small" placeholder="Exercise Name">
+                  <label>Sets</label><br>
+                  <input type="text" id="ex-sets" name="ex_sets" class="text-input-small" placeholder="Number of Sets">
+                  <label>Reps</label><br>
+                  <input type="text" id="ex-reps" name="ex_reps" class="text-input-small" placeholder="Number of Reps">
+                  <button id="new-exercise" class="my-btn" type="submit" value="submit">Add Exercise</button>
+                  <button id="save-workout" class="my-btn" >Save Workout</button>
+                </div>
+                <div class="row" id="exercise-list">
+                </div>
+              </div>
+              </form>
+            </div>

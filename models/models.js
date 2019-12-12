@@ -9,29 +9,31 @@ const WorkoutSchema = new Schema({
     required: "Workout is Required"
   },
 
-  exercises: [
-    {
-      ex_name: {
-        type: String,
-        trim: true,
-        required: "An exercise name is Required",
-      }
-    },
-    {
-      ex_sets: {
-        type: String,
-        trim: true,
-        required: "Sets is Required",
-      }
-    },
-    {
-      ex_reps: {
-        type: String,
-        trim: true,
-        required: "Reps is Required",
-      }
-    }
-  ]
+  exercises: Array
+
+  // exercises: [
+  //   {
+  //     ex_name: {
+  //       type: String,
+  //       trim: true,
+  //       required: "An exercise name is Required",
+  //     }
+  //   },
+  //   {
+  //     ex_sets: {
+  //       type: String,
+  //       trim: true,
+  //       required: "Sets is Required",
+  //     }
+  //   },
+  //   {
+  //     ex_reps: {
+  //       type: String,
+  //       trim: true,
+  //       required: "Reps is Required",
+  //     }
+  //   }
+  // ]
 
 });
 

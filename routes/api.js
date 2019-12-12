@@ -2,32 +2,36 @@ const Workout = require("../models/models.js");
 
 module.exports = function (app) {
   app.post("/api/add", (req, res) => {
-    console.log(req.body)
-    const myNewWorkout = {
-      workout_name: req.body.workout_name,
-      exercises: [
-        {
-          ex_name: req.body.ex_name,
-          ex_sets: req.body.ex_sets,
-          ex_reps: req.body.ex_reps
-        }
-      ]
-    };
-    //ex_name is populating, but the other two are not
+    const myNewWorkout = req.body;
     Workout.create(myNewWorkout)
-      .then(dbWorkout => {
-        //do work on dbWorkout
-        console.log(dbWorkout)
-        var hbsObject = {
-          burger: "test",
-          devoured: true
-        };
-        res.render("workout-list", hbsObject);
-
-      })
+      .then(res.send)
       .catch(err => {
         res.json(err);
       });
   });
 
+  app.put("/api/update", (req, res) => {
+    console.log("****************" + req.body)
+    // const myNewWorkout = req.body;
+    //   Workout.findOneAndReplace({_id: req.body.update_id}, req.body)
+    //     .then(res.send())
+    //     .catch(err => {
+    //       res.json(err);
+    //     });
+  });
+
+  app.get("/api/view/:id", (req, res) => {
+    Workout.findOne({ _id: req.params.id }, function (err, myWorkout) {
+      if (err) return handleError(err);
+      res.send(myWorkout)
+    });
+  });
+
+  app.delete("/api/delete", (req, res) => {
+    Workout.deleteOne({ _id: req.body.id }, function (err) {
+      if (err) return handleError(err);
+      // deleted at most one tank document
+      res.send();
+    });
+  });
 }
