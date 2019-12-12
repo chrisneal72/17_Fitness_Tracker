@@ -11,13 +11,13 @@ module.exports = function (app) {
   });
 
   app.put("/api/update", (req, res) => {
-    console.log("****************" + req.body)
-    // const myNewWorkout = req.body;
-    //   Workout.findOneAndReplace({_id: req.body.update_id}, req.body)
-    //     .then(res.send())
-    //     .catch(err => {
-    //       res.json(err);
-    //     });
+    console.log(req.body.id)
+    const myNewWorkout = req.body;
+      Workout.findOneAndReplace({_id: req.body.id}, req.body)
+        .then(res.send())
+        .catch(err => {
+          res.json(err);
+        });
   });
 
   app.get("/api/view/:id", (req, res) => {

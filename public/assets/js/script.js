@@ -2,16 +2,27 @@ $(function () {
 
   $("#new-workout").on("click", function (event) {
     $("#indv-workout").removeClass("new-workout-hide");
+    $("#exercise-list").empty();
+    myNewWorkout.exercises = [];
+    myNewWorkout.workout_name = '';
+    myNewWorkout.id = '';
+    $("#ex-name").val('');
+    $("#ex-sets").val('');
+    $("#ex-reps").val('');
+    $("#workout_name").val('');
+    $("#workout_form").attr('data-id', '');
   });
 
   const myNewWorkout = {
-    update_id: $("#workout_form").attr('data-id'),
+    id: $("#workout_form").attr('data-id'),
     workout_name: $("#workout_name").val().trim(),
     exercises: []
   };
 
   $("#workout_form").on("submit", function (event) {
     event.preventDefault();
+    if ($("#ex-name").val() === '' || $("#ex-sets").val() === "" || $("#ex-reps").val() === ""){ return false;};
+    $("#save-workout").removeClass("new-workout-hide");
     const workout = {
       ex_name: $("#ex-name").val().trim(),
       ex_sets: $("#ex-sets").val().trim(),
