@@ -16,7 +16,7 @@ This assignment was to create a fitness tracker, to record what was done during 
 ​
 ### Screenshots
 ​
-![Image](app/public/assets/workout.jpg)
+![Image](public/assets/workout.jpg)
 ​
 ### Link
 Check it out! 
