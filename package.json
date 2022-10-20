@@ -9,7 +9,7 @@
     "minimist": "^1.2.6",
     "mongodb": "^3.6.0",
     "mongojs": "^2.6.0",
-    "mongoose": "^5.9.28",
+    "mongoose": "^5.13.15",
     "morgan": "^1.10.0"
   },
   "devDependencies": {},
