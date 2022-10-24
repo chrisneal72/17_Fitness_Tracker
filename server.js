@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -14,7 +15,22 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnesstrackerdb", { useNewUrlParser: true });
+const connectToDatabase = async () => {
+  const connection = await mongoose.connect(
+    // process.env.MONGODB_CLOUD_URI || "mongodb://localhost/lukeevents",
+    process.env.MONGODB_CLOUD_URI,
+    {
+      // useCreateIndex: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
+      // useFindAndModify: false,
+    }
+  );
+
+  console.log(`MongoDB connected to ${connection.connection.host}.`);
+};
+
+connectToDatabase();
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
